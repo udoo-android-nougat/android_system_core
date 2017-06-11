@@ -668,6 +668,6 @@ service console /system/bin/sh
 #    chmod 0773 /data/misc/trace
 #    start console
 
-service flash_recovery /system/bin/install-recovery.sh
-    class main
-    oneshot
+#service flash_recovery /system/bin/install-recovery.sh
+#    class main
+#    oneshot
