@@ -55,7 +55,6 @@ public:
     virtual                 ~Vector();
 
     /*! copy operator */
-            const Vector<TYPE>&     operator = (const Vector<TYPE>& rhs) const;
             Vector<TYPE>&           operator = (const Vector<TYPE>& rhs);    
 
             const Vector<TYPE>&     operator = (const SortedVector<TYPE>& rhs) const;
@@ -246,11 +245,13 @@ Vector<TYPE>& Vector<TYPE>::operator = (const Vector<TYPE>& rhs) {
     return *this; 
 }
 
+#if 0
 template<class TYPE> inline
-const Vector<TYPE>& Vector<TYPE>::operator = (const Vector<TYPE>& rhs) const {
+const Vector<TYPE>& Vector<TYPE>::operator = (const Vector<TYPE>& rhs) {
     VectorImpl::operator = (static_cast<const VectorImpl&>(rhs));
     return *this;
 }
+#endif
 
 template<class TYPE> inline
 Vector<TYPE>& Vector<TYPE>::operator = (const SortedVector<TYPE>& rhs) {
